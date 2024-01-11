@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\JwtLogin.Core\JwtLogin.Core.csproj" />
+    <ProjectReference Include="..\JwtLogin.Infra\JwtLogin.Infra.csproj" />
+  </ItemGroup>
+
 </Project>
