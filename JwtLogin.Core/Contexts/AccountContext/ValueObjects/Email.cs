@@ -1,5 +1,6 @@
-﻿using JwtLogin.Core.SharedContext.Extensions;
-using JwtLogin.Core.SharedContext.ValueObjects;
+﻿using JwtLogin.Core.Contexts.AccountContext.ValueObjects;
+using JwtLogin.Core.Contexts.SharedContext.Extensions;
+using JwtLogin.Core.Contexts.SharedContext.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace JwtLogin.Core.AccountContext.ValueObjects
     {
         private const string Pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
 
+        protected Email() { }
         public Email(string address)
         {
             if (string.IsNullOrEmpty(address)) 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JwtLogin.Core.SharedContext.Entities
+namespace JwtLogin.Core.Contexts.SharedContext.Entities
 {
     public abstract class Entity : IEquatable<Guid>
     {

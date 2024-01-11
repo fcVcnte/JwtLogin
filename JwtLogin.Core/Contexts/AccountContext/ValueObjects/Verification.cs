@@ -1,14 +1,15 @@
-﻿using JwtLogin.Core.SharedContext.ValueObjects;
+﻿using JwtLogin.Core.Contexts.SharedContext.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JwtLogin.Core.AccountContext.ValueObjects
+namespace JwtLogin.Core.Contexts.AccountContext.ValueObjects
 {
     public class Verification : ValueObject
     {
+        public Verification() { }
         public string Code { get; } = Guid.NewGuid().ToString("N")[..6].ToUpper();
         public DateTime? ExpiresAt { get; private set; } = DateTime.UtcNow.AddMinutes(5);
         public DateTime? VerifiedAt { get; private set; } = null;
@@ -22,7 +23,7 @@ namespace JwtLogin.Core.AccountContext.ValueObjects
             if (ExpiresAt < DateTime.UtcNow)
                 throw new Exception("Your verification code expired");
 
-            if(!string.Equals(code.Trim(), Code.Trim(), StringComparison.CurrentCultureIgnoreCase))
+            if (!string.Equals(code.Trim(), Code.Trim(), StringComparison.CurrentCultureIgnoreCase))
                 throw new Exception("Your verification code is invalid");
 
             ExpiresAt = null;
