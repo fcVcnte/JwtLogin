@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,5 @@ namespace JwtLogin.Core.Contexts.AccountContext.UseCases.Create
         string Name,
         string Email,
         string Password
-    );
+    ) : IRequest<Response>;
 }

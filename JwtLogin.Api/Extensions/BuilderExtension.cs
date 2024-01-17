@@ -50,5 +50,10 @@ namespace JwtLogin.Api.Extensions
             });
             builder.Services.AddAuthorization();
         }
+
+        public static void AddMediator(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddMediatR(x => x.RegisterServicesFromAssembly(typeof(Configuration).Assembly));
+        }
     }
 }
