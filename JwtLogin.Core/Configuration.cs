@@ -21,7 +21,7 @@ namespace JwtLogin.Core
         public class EmailConfiguration
         {
             public string DefaultFromEmail { get; set; } = "jwt_login@test.com";
-            public string DefaultFromName { get; set; } = "Jwt Login Test";
+            public string DefaultFromName { get; set; } = "JWT Login Test";
         }
 
         public class SendGridConfiguration
