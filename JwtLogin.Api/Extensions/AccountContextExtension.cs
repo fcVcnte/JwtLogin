@@ -29,7 +29,7 @@ namespace JwtLogin.Api.Extensions
                     var result = await handler.Handle(request, new CancellationToken());
                     if (!result.IsSuccess)
                         return Results.Json(result, statusCode: result.Status);
-                    return Results.Created("", result);
+                    return Results.Created($"api/v1/users/{result.Data?.Id}", result);
                 });
             #endregion
         }

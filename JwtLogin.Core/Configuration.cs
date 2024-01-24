@@ -20,13 +20,13 @@ namespace JwtLogin.Core
 
         public class EmailConfiguration
         {
-            public string DefaultFromEmail { get; set; } = "jwt_login@test.com";
-            public string DefaultFromName { get; set; } = "JWT Login Test";
+            public string DefaultFromEmail { get; set; } = string.Empty;
+            public string DefaultFromName { get; set; } = string.Empty;
         }
 
         public class SendGridConfiguration
         {
-            public string ApiKey { get; set; }
+            public string ApiKey { get; set; } = string.Empty;
         }
 
         public class SecretsConfiguration

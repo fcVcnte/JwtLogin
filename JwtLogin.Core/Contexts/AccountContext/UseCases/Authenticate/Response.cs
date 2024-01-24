@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JwtLogin.Core.Contexts.AccountContext.UseCases.Create
+namespace JwtLogin.Core.Contexts.AccountContext.UseCases.Authenticate
 {
     public class Response : SharedContext.UseCases.Response
     {
@@ -29,5 +29,12 @@ namespace JwtLogin.Core.Contexts.AccountContext.UseCases.Create
         public ResponseData? Data { get; set; }
     }
 
-    public record ResponseData(Guid Id, string Name, string Email);
+    public class ResponseData
+    {
+        public string Token { get; set; } = string.Empty;
+        public string Id { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string[] Roles { get; set; } = Array.Empty<string>();
+    }
 }
