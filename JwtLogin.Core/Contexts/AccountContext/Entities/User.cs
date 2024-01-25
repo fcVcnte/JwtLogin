@@ -29,6 +29,7 @@ namespace JwtLogin.Core.Contexts.AccountContext.Entities
         public Email Email { get; private set; } = null!;
         public Password Password { get; private set; } = null!;
         public string Image { get; private set; } = string.Empty;
+        public List<Role> Roles { get; set; } = new();
 
         public void UpdatePassword(string plainTextPassword, string code)
         {
